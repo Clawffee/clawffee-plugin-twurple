@@ -1,0 +1,15 @@
+{
+  "name": "twurple",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@twurple/api": "^7",
+    "@twurple/chat": "^7",
+    "@twurple/eventsub-ws": "^7"
+  }
+}
