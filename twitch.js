@@ -5,10 +5,10 @@ const { EventSubWsListener } = require('@twurple/eventsub-ws');
 const { RefreshingAuthProvider, StaticAuthProvider, exchangeCode } = require('@twurple/auth');
 const path = require("path");
 
-const {codeBinder: { associateClassWithFile }} = require('../../test.bak/plugins/internal/internal.js');
+const {codeBinder: { associateClassWithFile }} = require('../internal/internal.js');
 
-const { autoSavedJSON, encryptData, decryptData } = require("../../test.bak/plugins/builtin/files.js");
-const { setFunction, sharedServerData, openURL } = require("../../test.bak/plugins/builtin/server.js");
+const { autoSavedJSON, encryptData, decryptData } = require("../builtin/files.js");
+const { setFunction, sharedServerData, openURL } = require("../builtin/server.js");
 
 if(!fs.existsSync(path.join(__dirname, "../../config/internal/twitch_data.js"))) {
     fs.writeFileSync(path.join(__dirname, "../../config/internal/twitch_data.js"), "module.exports = " + JSON.stringify({
@@ -16,8 +16,8 @@ if(!fs.existsSync(path.join(__dirname, "../../config/internal/twitch_data.js")))
         redeems: {}
     }))
 }
-const extraData = require("../../test.bak/config/internal/twitch_data.js");
-const { createDoNothing, bindDoNothing } = require('../../test.bak/plugins/builtin/do_nothing.js');
+const extraData = require("../../config/internal/twitch_data.js");
+const { createDoNothing, bindDoNothing } = require('../builtin/do_nothing.js');
 
 
 const confPath = 'config/internal/';
