@@ -7,8 +7,8 @@ const path = require("path");
 
 const {codeBinder: { associateClassWithFile }} = require('../internal/internal.js');
 
-const { autoSavedJSON, encryptData, decryptData } = require("../builtin/files.js");
-const { setFunction, sharedServerData, openURL } = require("../builtin/server.js");
+const { autoSavedJSON, encryptData, decryptData } = require("../builtin/helpers/files.js");
+const { setFunction, sharedServerData, openURL } = require("../builtin/helpers/server.js");
 
 if(!fs.existsSync(path.join(__dirname, "../../config/internal/twitch_data.js"))) {
     fs.writeFileSync(path.join(__dirname, "../../config/internal/twitch_data.js"), "module.exports = " + JSON.stringify({
